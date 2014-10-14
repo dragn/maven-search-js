@@ -9,11 +9,11 @@ String.prototype.padRight = function (padValue) {
 function parse(str) {
   var data = JSON.parse(str);
   console.log();
-  console.log('%s%s', 'Name'.padRight(col), 'Release Date');
-  console.log('%s%s', '===='.padRight(col), '============');
+  console.log('%s %s', 'Name'.padRight(col), 'Release Date');
+  console.log('%s %s', '===='.padRight(col), '============');
   for (var i in data.response.docs) {
     var doc = data.response.docs[i];
-    console.log('%s%s',
+    console.log('%s %s',
         (doc.id + (doc.latestVersion ? ':' + doc.latestVersion : '')).padRight(col),
         new Date(doc.timestamp).toLocaleDateString());
   }
